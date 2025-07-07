@@ -9,6 +9,15 @@ def home(request):
        op = request.POST.get('Op')
        if op =='add':
            result = a+b
+       elif op =='sub':
+           result = a-b
+       elif op =='mul':
+           result = a*b
+       elif op =='div':
+           if b != 0:
+               result = a/b
+           else:
+               error = "Cannot divide by zero"
        else:
            return render(request,'home.html',{'error':'error'})
        #return render(request,'home.html',{'result':result})  
